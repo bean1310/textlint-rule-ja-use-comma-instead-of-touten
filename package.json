@@ -2,7 +2,7 @@
   "name": "textlint-rule-ja-use-comma-instead-of-touten",
   "version": "1.0.0",
   "description": "",
-  "main": "lib\textlint-rule-ja-use-comma-instead-of-touten.js",
+  "main": "lib/textlint-rule-ja-use-comma-instead-of-touten.js",
   "scripts": {
     "build": "textlint-scripts build",
     "test": "textlint-scripts test"
