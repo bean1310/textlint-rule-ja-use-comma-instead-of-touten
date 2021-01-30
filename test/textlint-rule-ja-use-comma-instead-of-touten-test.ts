@@ -1,3 +1,9 @@
+// Copyright (c) 2021 BEAN
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+
 const TextLintTester = require("textlint-tester");
 const tester = new TextLintTester();
 const rule = require("../src/textlint-rule-ja-use-comma-instead-of-touten");
