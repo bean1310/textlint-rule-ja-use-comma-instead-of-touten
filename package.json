@@ -1,12 +1,17 @@
 {
   "name": "textlint-rule-ja-use-comma-instead-of-touten",
   "version": "1.0.0",
-  "description": "",
+  "description": "A textlint rule of force to use Zenkaku comma instead of touten.",
   "main": "lib/textlint-rule-ja-use-comma-instead-of-touten.js",
   "scripts": {
     "build": "textlint-scripts build",
-    "test": "textlint-scripts test"
+    "test": "textlint-scripts test",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test"
   },
+  "files": [
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bean1310/textlint-rule-ja-use-comma-instead-of-touten.git"
