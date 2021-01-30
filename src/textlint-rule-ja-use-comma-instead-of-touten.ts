@@ -11,6 +11,7 @@ import { RuleHelper } from "textlint-rule-helper";
 
 const japaneseRegExp = /(?:[々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F][\uDC00-\uDFFF]|[ぁ-んァ-ヶ])/;
 const badComma = /[、\,]/;
+const errorMessage = "読点が「，」ではありません。";
 
 const reporter: TextlintRuleReporter = function (context)
 {
@@ -34,7 +35,7 @@ const reporter: TextlintRuleReporter = function (context)
 
             validationResults.forEach(result => {
                 if (!result.valid && result.index != undefined) {
-                    const ruleError = new RuleError("Disallow to use 読点", {
+                    const ruleError = new RuleError(errorMessage, {
                         index: result.index,
                         fix: fixer.replaceTextRange([result.index, result.index + 1], "，")
                     })

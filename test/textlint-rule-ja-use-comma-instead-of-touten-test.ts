@@ -7,6 +7,7 @@
 const TextLintTester = require("textlint-tester");
 const tester = new TextLintTester();
 const rule = require("../src/textlint-rule-ja-use-comma-instead-of-touten");
+const errorMessage = rule.errorMessage;
 
 tester.run("use-comma-instead-of-touten", rule, {
     valid: [
@@ -20,7 +21,7 @@ tester.run("use-comma-instead-of-touten", rule, {
             output: "明日は，雨だ．",
             errors: [
                 {
-                    message: `Disallow to use 読点`,
+                    message: errorMessage,
                     line: 1,
                     column: 4
                 }
@@ -31,17 +32,17 @@ tester.run("use-comma-instead-of-touten", rule, {
             output: "今日は，快晴だが，\n明日は，雨の予報があり，傘を持っていく必要があるだろう．",
             errors: [
                 {
-                    message: `Disallow to use 読点`,
+                    message: errorMessage,
                     line: 1,
                     column: 4
                 },
                 {
-                    message: `Disallow to use 読点`,
+                    message: errorMessage,
                     line: 2,
                     column: 4
                 },
                 {
-                    message: `Disallow to use 読点`,
+                    message: errorMessage,
                     line: 2,
                     column: 12
                 }
